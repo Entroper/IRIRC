@@ -1,8 +1,18 @@
 ﻿<Window x:Class="IRIRC.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        Title="IRIRC" Height="350" Width="525">
     <Grid>
-        
+        <Label x:Name="ircServerLabel" Content="IRC Server:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ircServerTextBox" HorizontalAlignment="Left" Height="23" Margin="82,14,0,0" TextWrapping="Wrap" Text="irc.twitch.tv" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="usernameLabel" Content="Username:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="passwordLabel" Content="Password:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="usernameTextBox" HorizontalAlignment="Left" Height="23" Margin="82,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="usernameTextBox_TextChanged"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="82,80,0,0" VerticalAlignment="Top" Width="120" ToolTip="For twitch.tv IRC, this must be your OAuth token.  Get your token at http://www.twitchapps.com/tmi/"/>
+        <Label x:Name="channelLabel" Content="Channel:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="channelTextBox" HorizontalAlignment="Left" Height="23" Margin="82,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="#" IsEnabled="False"/>
+        <CheckBox x:Name="sameAsUsernameCheckBox" Content="Same as username" HorizontalAlignment="Left" Margin="207,109,0,0" VerticalAlignment="Top" IsChecked="True" Checked="sameAsUsernameCheckBox_Checked" Unchecked="sameAsUsernameCheckBox_Unchecked"/>
+        <Button x:Name="connectButton" Content="Connect" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top" Width="75" Click="connectButton_Click"/>
+
     </Grid>
 </Window>
